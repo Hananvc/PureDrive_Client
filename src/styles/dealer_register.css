@@ -1,0 +1,7 @@
+.bg-dealer{
+        background-image: url("../images/misc/3.jpg");
+        background-size:cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100%;
+      }

@@ -1,0 +1,11 @@
+.Toastify__toast {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    z-index:999;
+  }
+
+.Toastify__toast-container {
+    top: 80px; 
+
+}

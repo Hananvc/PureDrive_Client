@@ -1,0 +1,13 @@
+/* Custom CSS to increase sizes by 37.5% */
+.card-container {
+    transform: scale(1.10); /* 37.5% scaling */
+  }
+  
+.admincard-container {
+  transform: scale(1.35); /* 37.5% scaling */
+
+}
+
+.table-container{
+  transform: scale(1.1);
+}
