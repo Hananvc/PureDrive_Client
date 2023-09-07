@@ -86,7 +86,7 @@ function VehicleSingleView() {
                                         Variants available: {vehicle.Variant.length}
                                     </p>
                                     <p className="text-2xl mb-4">
-                                        Variants : {vehicle.Variant.map((variant) => variant.name).join(', ')}
+                                        Variants : {vehicle?.Variant?.map((variant) => variant.name).join(', ')}
                                     </p>
                                 </>
                             )}
@@ -111,7 +111,7 @@ function VehicleSingleView() {
                         <div className="mb-10">
                             <h4 className="text-3xl font-semibold mt-4 mb-2">Images:</h4>
                             <div className="flex justify-center">
-                                {vehicle.images.length > 0 ? (
+                                {vehicle?.images?.length > 0 ? (
                                     <Carousel
                                         showThumbs={false}
                                         width="40vw"
@@ -122,7 +122,7 @@ function VehicleSingleView() {
                                         onChange={handleSlideChange} // Handle slide change to update currentSlide
                                         infiniteLoop={true} // Enable infinite loop
                                     >
-                                        {vehicle.images.map((image) => (
+                                        {vehicle?.images?.map((image) => (
                                             <div key={image.id}>
                                                 <img
                                                     src={image.images}
@@ -155,7 +155,7 @@ function VehicleSingleView() {
                                 value={selectedVariant?.id || ''}
                             >
                                 <option value="">Select a variant</option>
-                                {vehicle.Variant.map((variant) => (
+                                {vehicle?.Variant?.map((variant) => (
                                     <option key={variant.id} value={variant.id}>
                                         {variant.name}
                                     </option>
@@ -175,9 +175,9 @@ function VehicleSingleView() {
                                 <p className="text-2xl mb-2">Fast Charging: {selectedVariant.fast_charging ? 'Yes' : 'No'}</p>
                                 <p className="text-2xl mb-2">Year Manufactured: {selectedVariant.year_manufactured}</p>
                                 <p className="text-2xl mb-2">Is Featured: {selectedVariant.is_featured ? 'Yes' : 'No'}</p>
-                                <h4 className="text-3xl font-semibold mt-4 mb-2">Images:</h4>
+                                {/* <h4 className="text-3xl font-semibold mt-4 mb-2">Images:</h4> */}
                                 <div className="flex space-x-4">
-                                    {selectedVariant.images.map((image) => (
+                                    {selectedVariant?.images?.map((image) => (
                                         <img
                                             key={image.id}
                                             src={image.images}
