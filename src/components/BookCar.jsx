@@ -184,7 +184,7 @@ function BookCar() {
 
     // Set the default image URL of the selected vehicle for the modal
     if (selectedVehicle) {
-      const absoluteImageUrl = `http://localhost:8000${selectedVehicle.default_image}`;
+      const absoluteImageUrl = `https://puredrive.onrender.com${selectedVehicle.default_image}`;
       setModalCarImg(absoluteImageUrl);
     }
   };

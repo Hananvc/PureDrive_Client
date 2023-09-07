@@ -29,7 +29,7 @@ const DealerLogin = () => {
     const role="dealer";
     try {
       // console.log("roles----",email,password,role,"************");
-      const response = await axios.post('http://127.0.0.1:8000/userapp/login/', { email, password,  role });
+      const response = await axios.post('https://puredrive.onrender.com/userapp/login/', { email, password,  role });
       console.log(response.data.refresh, '-------token-------------------');
       localStorage.setItem('refresh', response.data.refresh);
       localStorage.setItem('access', response.data.access);

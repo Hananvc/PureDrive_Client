@@ -44,7 +44,7 @@ const DealerRegister = () => {
 
       useEffect(() => {
         axios
-          .get('http://localhost:8000/vehicleapp/brands/')
+          .get('https://puredrive.onrender.com/vehicleapp/brands/')
           .then((response) => {
             // Modify the data received from the backend to have primary key as "value"
             const modifiedBrands = response.data.map((brand) => ({
@@ -114,7 +114,7 @@ const DealerRegister = () => {
 
     try {
       // Attempt to make the asynchronous API call
-      const response = await axios.post("http://localhost:8000/userapp/otp/", formData);
+      const response = await axios.post("https://puredrive.onrender.com/userapp/otp/", formData);
       // If the API call succeeds, the following code will be executed
       console.log(response.data, '----------------------dlrrrrrrr=======');
       setData(response.data);
@@ -137,7 +137,7 @@ const DealerRegister = () => {
 
   // const handleOtp = (e) => {
   //   e.preventDefault();
-  //         axios.post('http://localhost:8000/userapp/dealer/', formData)
+  //         axios.post('https://puredrive.onrender.com/userapp/dealer/', formData)
   //         .then((response) => {
   //         toast.success('Registration successful');
   //         navigate('/dealer_redirect')

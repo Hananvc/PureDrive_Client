@@ -17,7 +17,7 @@ export default function Modalglobal(props) {
   const handleregister = () => {
     if (otp === props.data.otp) {
       axios
-        .post('http://localhost:8000/userapp/dealer/', props.data.user)
+        .post('https://puredrive.onrender.com/userapp/dealer/', props.data.user)
         .then((response) => {
           localStorage.setItem('refresh', response.data.refresh);
           localStorage.setItem('token', response.data.token);

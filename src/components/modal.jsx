@@ -20,7 +20,7 @@ export default function Modal(props) {
   const handleregister = async () => {
     try {
       if (otp === props.data.otp) {
-        const response = await axios.post('http://localhost:8000/userapp/signup/', props.data.user);
+        const response = await axios.post('https://puredrive.onrender.com/userapp/signup/', props.data.user);
         localStorage.setItem('refresh', response.data.refresh);
         localStorage.setItem('access', response.data.access);
         localStorage.setItem('user', JSON.stringify(response.data.user));

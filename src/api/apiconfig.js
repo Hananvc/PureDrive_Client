@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create and configure an Axios instance
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:8000", // Replace with your API base URL
+  baseURL: "https://puredrive.onrender.com", // Replace with your API base URL
   timeout: 10000, // Set the timeout for requests (in milliseconds)
 });
 
@@ -38,7 +38,7 @@ axiosInstance.interceptors.response.use(
       try {
         // Make a request to refresh the access token using the refresh token
         const refreshResponse = await axios.post(
-          "http://127.0.0.1:8000/userapp/token/refresh/",
+          "https://puredrive.onrender.com/userapp/token/refresh/",
           {
             refresh: refresh,
           }

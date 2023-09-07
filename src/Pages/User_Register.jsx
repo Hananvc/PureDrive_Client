@@ -38,7 +38,7 @@ const UserRegister = () => {
     // Send POST request to register user
     console.log(formData, '-------------------------data-----------------------');
     axios
-      .post('http://localhost:8000/userapp/otp/', formData)
+      .post('https://puredrive.onrender.com/userapp/otp/', formData)
       .then((response) => {
         // Handle successful registration
         // setRegistrationStatus('Registration successful');

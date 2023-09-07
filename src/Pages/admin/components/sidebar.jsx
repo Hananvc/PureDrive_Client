@@ -64,7 +64,7 @@ export function SidebarWithSearch() {
     <div className="flex ">
     <Card className=" p-4 shadow-xl shadow-blue-gray-900/5 my-20 bg-blue-gray-200">
       <div className="mb-2 flex items-center gap-4 p-4">
-        <img src={`http://127.0.0.1:8000${userData?.profile_image}`} alt="brand" className="h-28 w-25" />
+        <img src={`https://puredrive.onrender.com${userData?.profile_image}`} alt="brand" className="h-28 w-25" />
         <Typography variant="h5" color="blue-gray" style={{ fontSize: '137.5%' }}>
          Admin
         </Typography>
