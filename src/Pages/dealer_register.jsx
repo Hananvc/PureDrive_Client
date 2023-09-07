@@ -40,9 +40,17 @@ const DealerRegister = () => {
   const [countryChoices, setCountryChoices] = useState([]);
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const isAccess = localStorage.getItem('access');
+
+  useEffect(() => {
+    // If the user is already logged in, redirect to the homepage
+    if (isAccess) {
+      navigate('/');
+    }
+  }, [isAccess, navigate]);
 
 
-      useEffect(() => {
+  useEffect(() => {
         axios
           .get('https://puredrive.onrender.com/vehicleapp/brands/')
           .then((response) => {

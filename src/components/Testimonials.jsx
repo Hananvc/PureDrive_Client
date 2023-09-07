@@ -24,9 +24,8 @@ function Testimonials() {
                   <i className="fa-solid fa-quote-right"></i>
                 </span>
                 <p>
-                  "We rented a car from this website and had an amazing
-                  experience! The booking was easy and the rental rates were
-                  very affordable. "
+                  "We Booked a car from this website and had an amazing
+                  experience! The booking was easy and the Customer Service was very good. "
                 </p>
                 <div className="all-testimonials__box__name">
                   <div className="all-testimonials__box__name__profile">
@@ -45,7 +44,7 @@ function Testimonials() {
                 </span>
                 <p>
                   "The car was in great condition and made our trip even better.
-                  Highly recommend for this car rental website!"
+                  Highly recommend for EV bookings!"
                 </p>
                 <div className="all-testimonials__box__name">
                   <div className="all-testimonials__box__name__profile">

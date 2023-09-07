@@ -156,7 +156,7 @@ function Models() {
                 <div className="relative">
                     <img
                         src={data.images[0].images}
-                        alt="ui/ux review check"
+                        alt="img"
                         style={{ height: '160px', minWidth: '100%' }}
                     />
                     <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
@@ -231,7 +231,7 @@ function Models() {
                 ></i>
               </span>
             </Tooltip>
-            <Tooltip content="2 bedrooms" className="text-lg antialiased font-light">
+            <Tooltip content="" className="text-lg antialiased font-light">
               <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -261,7 +261,7 @@ function Models() {
                 </svg>
               </span>
             </Tooltip>
-            <Tooltip content="Fire alert" className="text-lg antialiased font-light">
+            <Tooltip content="Trending" className="text-lg antialiased font-light">
               <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

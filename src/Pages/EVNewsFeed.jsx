@@ -75,8 +75,8 @@ const EVNewsFeed = () => {
             <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 justify-center items-center mt-10">
                 {news.length === 0 ? (
                     <>
-                    <p>No news data available. Please check back later.</p>
-                    <Button onClick={handleFetchInitialNews} class="">Fetch Initial News Data</Button>
+                    {/* <p>No news data available. Please check back later.</p>
+                    <Button onClick={handleFetchInitialNews} class="">Fetch Initial News Data</Button> */}
                     </>
                 ) : (
                     currentArticles.map((article, index) => (

@@ -116,17 +116,17 @@ export function Brand() {
                 return (
                   <tr key={name}>
                     <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-bold" style={{ fontSize: '137.5%' }}>
+                      <Typography variant="small" color="blue-gray" className="font-bold" style={{ fontSize: '125.5%' }}>
                         {name}
                       </Typography>
                     </td>
                     <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal" style={{ fontSize: '137.5%' }}>
+                      <Typography variant="small" color="blue-gray" className="font-normal" style={{ fontSize: '125.5%' }}>
                         {category.name}
                       </Typography>
                     </td>
                     <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal" style={{ fontSize: '137.5%' }}>
+                      <Typography variant="small" color="blue-gray" className="font-normal" style={{ fontSize: '125.5%' }}>
                         {dealer.length}
                       </Typography>
                     </td>
@@ -137,7 +137,7 @@ export function Brand() {
                       variant="small"
                       color="blue"
                       className="font-semibold"
-                      style={{ fontSize: '137.5%', cursor: 'pointer' }}
+                      style={{ fontSize: '127.5%', cursor: 'pointer' }}
                       onClick={() => handleEditButtonClick(id)} // Pass the brand name as parameter
                     >
                       Edit
@@ -150,7 +150,7 @@ export function Brand() {
                       variant="small"
                       color="red"
                       className="font-semibold"
-                      style={{ fontSize: '137.5%', cursor: 'pointer' }}
+                      style={{ fontSize: '127.5%', cursor: 'pointer' }}
                       onClick={() => handleDeleteButtonClick(id)} // Pass the brand ID as parameter
                     >
                       Delete

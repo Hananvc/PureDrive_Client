@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "./table";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -38,9 +38,12 @@ export function SidebarWithSearch() {
   const [openAlert, setOpenAlert] = React.useState(true);
   const navigate=useNavigate();
   const userData = JSON.parse(localStorage.getItem('user'));
-  // console.log("userdata is",userData)
+  const [img,setimg]=useState();
+  console.log("userdata is",userData)
 
-
+  useEffect(()=>{
+    setimg(userData?.profile_image)
+  },[]);
 
   const handleCategoryClick = () => {
     navigate('/AdminCategory');
@@ -64,7 +67,7 @@ export function SidebarWithSearch() {
     <div className="flex ">
     <Card className=" p-4 shadow-xl shadow-blue-gray-900/5 my-20 bg-blue-gray-200">
       <div className="mb-2 flex items-center gap-4 p-4">
-        <img src={`https://puredrive.onrender.com${userData?.profile_image}`} alt="brand" className="h-28 w-25" />
+        <img src={`https://puredrive.onrender.com${userData?.profile_image}`} alt="img" className="h-28 w-25" />
         <Typography variant="h5" color="blue-gray" style={{ fontSize: '137.5%' }}>
          Admin
         </Typography>
@@ -96,21 +99,23 @@ export function SidebarWithSearch() {
                 <ListItemPrefix>
                   <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                 </ListItemPrefix>
-                Home
+                Admin Dash
               </ListItem>
             </Link>
+            <Link to="/">
               <ListItem>
                 <ListItemPrefix>
                   <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                 </ListItemPrefix>
-                Reporting
+                Live Site
               </ListItem>
-              <ListItem>
+            </Link>
+              {/* <ListItem>
                 <ListItemPrefix>
                   <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                 </ListItemPrefix>
                 Projects
-              </ListItem>
+              </ListItem> */}
             </List>
           </AccordionBody>
         </Accordion>

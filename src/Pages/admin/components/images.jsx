@@ -113,7 +113,7 @@ console.log("vehicle data is ",vehicles);
             </thead>
             <thead>
               <tr>
-                {["Vehicle Name", "Default Image", "Brand",""].map((head) => (
+                {["Vehicle Name", "Images", "Brand", "Action"].map((head) => (
                   <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                     <Typography variant="small" color="blue-gray" className="font-normal leading-none opacity-70" style={{ fontSize: '115.5%' }}>
                       {head}

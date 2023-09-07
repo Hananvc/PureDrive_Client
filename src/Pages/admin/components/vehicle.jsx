@@ -174,9 +174,7 @@ console.log("vehicle data is ",vehicles);
               ))}
             </tbody>
           </table>
-          {isEditModalOpen && (
-        <VehicleEditModal vehicleId={selectedVehicleId} onClose={() => setIsEditModalOpen(false)} fetchData={fetchData} />
-      )}
+          
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row my-5">
           <Button
             onClick={handleAddModalOpen}
@@ -189,6 +187,9 @@ console.log("vehicle data is ",vehicles);
           </div>
         </Card>
       </div>
+      {isEditModalOpen && (
+        <VehicleEditModal vehicleId={selectedVehicleId} onClose={() => setIsEditModalOpen(false)} fetchData={fetchData} />
+      )}
       {isAddModalOpen && (
       <VehicleAddModal onClose={() => setIsAddModalOpen(false)} fetchData={fetchData} />
     )}

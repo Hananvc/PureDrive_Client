@@ -37,6 +37,7 @@ import News from "./Pages/admin/components/News";
 import { Images } from "./Pages/admin/components/images";
 import { Variants } from "./Pages/admin/components/variants";
 import ProtectedRoute from "./Routes/ProtectedRoute";
+import { Loginloader } from "./Pages/loginloader";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/profilemodal" element={<ProfileUpdateMdl/>} />
         <Route path="/loader" element={<Loader/>} />
+        <Route path="/loginloader" element={<Loginloader/>} />
         <Route path="/test" element={<BookingCard/>} />
         <Route path="/vehicle/:id" element={<VehicleSingleView />} />
         <Route path="/news" element={<EVNewsFeed/>} />

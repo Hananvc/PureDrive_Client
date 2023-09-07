@@ -5,12 +5,14 @@ import "../styles/login.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../components/Navbar';
+import { Loginloader } from './loginloader';
 
 
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading,setloading]=useState(false)
   // const [role, setRole] = useState('');
 
   const navigate = useNavigate();
@@ -28,8 +30,10 @@ const Login = () => {
   
     const role="user";
     try {
+      setloading(true);
       // console.log("roles----",email,password,role,"************");
       const response = await axios.post('https://puredrive.onrender.com/userapp/login/', { email, password,  role });
+      setloading(false);
       console.log(response.data.refresh, '-------token-------------------');
       localStorage.setItem('refresh', response.data.refresh);
       localStorage.setItem('access', response.data.access);
@@ -42,6 +46,7 @@ const Login = () => {
       toast.success("Successfully authenticated")
       navigate('/');
     } catch (error) {
+      setloading(false);
       console.error('Authentication failed:', error.response.data.message);
       toast.warn("Authentication failed")
     }
@@ -103,12 +108,19 @@ const Login = () => {
                         </a>
                       </p>
                       <div className="flex justify-center">
-                        <button
+                        {loading ? <>
+                        <Loginloader/>
+                        </>
+                        :
+                        <>
+                          <button
                           type="submit"
                           className="bg-blue-500 text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-blue-600 focus:outline-none"
                         >
                           Login
                         </button>
+                        </>}
+                      
                       </div>
                     </form>
                   </div>
