@@ -51,7 +51,7 @@ function Navbar() {
                 Models
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link onClick={openNav} to="/testimonials">
                 Testimonials
               </Link>
@@ -60,7 +60,7 @@ function Navbar() {
               <Link onClick={openNav} to="/team">
                 Our Team
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link onClick={openNav} to="/contact">
                 Contact
@@ -145,11 +145,11 @@ function Navbar() {
                 EV News
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link className="team-link" to="/team">
                 Our Team
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link className="contact-link" to="/contact">
                 Contact

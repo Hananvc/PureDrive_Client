@@ -6,7 +6,7 @@ function Footer() {
           <div className="footer-content">
             <ul className="footer-content__1">
               <li>
-                <span>CAR</span> Rental
+                <span>EV</span> World
               </li>
               <li>
                 We offers a big range of vehicles for all your driving needs. We
@@ -24,7 +24,7 @@ function Footer() {
                 carrental@gmail.com"
                 >
                   <i className="fa-solid fa-envelope"></i>
-                  &nbsp; calebjephuneh@gmail.com
+                  &nbsp; puredrivecontact@gmail.com
                 </a>
               </li>
 
@@ -35,7 +35,7 @@ function Footer() {
                   rel="noreferrer"
                   href="https://jephunneh.com/"
                 >
-                  Design by cjephuneh
+                  Designed by Hanan VC
                 </a>
               </li>
             </ul>

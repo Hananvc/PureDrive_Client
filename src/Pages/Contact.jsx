@@ -22,7 +22,7 @@ function Contact() {
               </a>
               <a href="/">
                 <i className="fa-solid fa-envelope"></i>&nbsp;
-                puredrive@gmail.com
+                puredrivecontact@gmail.com
               </a>
               <a href="/">
                 <i className="fa-solid fa-location-dot"></i>&nbsp; Kerala,India
