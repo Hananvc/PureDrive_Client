@@ -15,15 +15,25 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../styles/sizing.css";
 import axiosInstance from "../api/apiconfig";
+import axiosInstanceWithoutAuth from "../api/apiconfig";
 
 
 function Home() {
   const [allData, setallData] = useState([]);
   const Access = localStorage.getItem('access');
   const userData = JSON.parse(localStorage.getItem('user'));
+  const [news, setNews] = useState([]);
+
 
   useEffect(() => {
     fetchData();
+    axiosInstance.get('vehicleapp/cached-news/')
+            .then(response => {
+                setNews(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching cached news data:', error);
+            });
   }, []);
 
   async function fetchData() {
@@ -46,6 +56,7 @@ function Home() {
     }
   }
   console.log("vehicle data is ", allData);
+  console.log("news data loaded as ", news);
   return (
     
 

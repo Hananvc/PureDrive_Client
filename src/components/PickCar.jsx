@@ -67,11 +67,11 @@ function PickCar({ allData }) {
               </div>
               {active !== -1 && <CarBox data={visibleCars[active]} />}
             </div>
-            <div className="pagination w-48 flex -my-16" >
+            <div className="pagination w-48 flex -my-0" >
               <button onClick={handlePreviousPage} disabled={currentPage === 1}  className="cta-btn font-bold" style={{ textTransform: "capitalize" }} >
                 Previous
               </button>
-              <button onClick={handleNextPage} disabled={currentPage === totalPages} className="cta-btn ml-5  font-bold" style={{ textTransform: "capitalize" }}>
+              <button onClick={handleNextPage} disabled={currentPage === totalPages} className="cta-btn ml-5 font-bold" style={{ textTransform: "capitalize" }}>
                 Next
               </button>
             </div>

@@ -20,7 +20,7 @@ export default function Modalglobal(props) {
         .post('https://puredrive.onrender.com/userapp/dealer/', props.data.user)
         .then((response) => {
           localStorage.setItem('refresh', response.data.refresh);
-          localStorage.setItem('token', response.data.token);
+          // localStorage.setItem('token', response.data.token);
           localStorage.setItem('user', JSON.stringify(response.data.user));
           setIsModalOpen(false); // Close the modal after successful registration
           toast.success('Registration successful');

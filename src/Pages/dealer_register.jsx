@@ -401,7 +401,7 @@ const DealerRegister = () => {
               </div>
 
               <p className="text-xl text-center mt-4 text-gray-700">
-                Have an account? <a href="/" className="text-blue-500 font-medium hover:underline">Login here</a>
+                Have an account? <a href="/login" className="text-blue-500 font-medium hover:underline">Login here</a>
               </p>
             </div>
             )}

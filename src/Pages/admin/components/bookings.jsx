@@ -69,7 +69,7 @@ export function Bookings() {
               </tr>
             </thead>
             <tbody>
-              {bookings.map(({ booking_reference, booking_status, brand, model_name, date, time, dealer, dealer_email, customer_name ,customer_email,customer_phone}, index) => {
+              {bookings.map(({ booking_reference, booking_status, brand, model_name, date, time, dealer, dealer_email, customer_name ,customer_email,customer_phone,review}, index) => {
                 const classes = "p-4 border-b border-blue-gray-50";
                 return (
                   <tr key={booking_reference}>

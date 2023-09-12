@@ -21,7 +21,9 @@ function Navbar() {
     localStorage.removeItem('refresh');
     localStorage.removeItem('access');
     localStorage.removeItem('id');
-    localStorage.removeItem('user')
+    localStorage.removeItem('user');
+    localStorage.removeItem('admin');
+    // localStorage.removeItem('token');
 
     navigate('/login');
     toast.success('Logout Successful');
@@ -51,12 +53,12 @@ function Navbar() {
                 Models
               </Link>
             </li>
-            {/* <li>
-              <Link onClick={openNav} to="/testimonials">
-                Testimonials
+            <li>
+              <Link onClick={openNav} to="/news">
+                EV News
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link onClick={openNav} to="/team">
                 Our Team
               </Link>

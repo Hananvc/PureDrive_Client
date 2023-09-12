@@ -36,7 +36,7 @@ function Faq() {
                   onClick={() => openQ("q1")}
                   className={`faq-box__question  ${getClassQuestion("q1")}`}
                 >
-                  <p>1. What is special about comparing rental car deals?</p>
+                  <p>1. What is special about EV cars ?</p>
                   <i className="fa-solid fa-angle-down"></i>
                 </div>
                 <div
@@ -44,13 +44,7 @@ function Faq() {
                   onClick={() => openQ("q1")}
                   className={`faq-box__answer ${getClassAnswer("q1")}`}
                 >
-                  Comparing rental car deals is important as it helps find the
-                  best deal that fits your budget and requirements, ensuring you
-                  get the most value for your money. By comparing various
-                  options, you can find deals that offer lower prices,
-                  additional services, or better car models. You can find car
-                  rental deals by researching online and comparing prices from
-                  different rental companies.
+                 EVs are special because they produce zero emissions, are highly energy-efficient, have lower operating costs, and can be powered by renewable energy sources, reducing environmental impact and dependence on fossil fuels.
                 </div>
               </div>
               <div className="faq-box">
@@ -59,7 +53,7 @@ function Faq() {
                   onClick={() => openQ("q2")}
                   className={`faq-box__question ${getClassQuestion("q2")}`}
                 >
-                  <p>2. How do I find the car rental deals?</p>
+                  <p>2. How do I find the EV car deals?</p>
                   <i className="fa-solid fa-angle-down"></i>
                 </div>
                 <div
@@ -67,37 +61,7 @@ function Faq() {
                   onClick={() => openQ("q2")}
                   className={`faq-box__answer ${getClassAnswer("q2")}`}
                 >
-                  You can find car rental deals by researching online and
-                  comparing prices from different rental companies. Websites
-                  such as Expedia, Kayak, and Travelocity allow you to compare
-                  prices and view available rental options. It is also
-                  recommended to sign up for email newsletters and follow rental
-                  car companies on social media to be informed of any special
-                  deals or promotions.
-                </div>
-              </div>
-              <div className="faq-box">
-                <div
-                  id="q3"
-                  onClick={() => openQ("q3")}
-                  className={`faq-box__question ${getClassQuestion("q3")}`}
-                >
-                  <p>3. How do I find such low rental car prices?</p>
-                  <i className="fa-solid fa-angle-down"></i>
-                </div>
-                <div
-                  id="q3"
-                  onClick={() => openQ("q3")}
-                  className={`faq-box__answer ${getClassAnswer("q3")}`}
-                >
-                  Book in advance: Booking your rental car ahead of time can
-                  often result in lower prices. Compare prices from multiple
-                  companies: Use websites like Kayak, Expedia, or Travelocity to
-                  compare prices from multiple rental car companies. Look for
-                  discount codes and coupons: Search for discount codes and
-                  coupons that you can use to lower the rental price. Renting
-                  from an off-airport location can sometimes result in lower
-                  prices.
+                  You can find EV car deals by exploring manufacturer websites, checking local dealerships, and browsing online marketplaces. Websites like Electrek and CleanTechnica offer news and updates on deals. Additionally, government incentives and end-of-year sales can provide attractive offers. Don't forget to negotiate and consider used or certified pre-owned EVs for potential savings.
                 </div>
               </div>
             </div>

@@ -16,6 +16,19 @@ function BookCar() {
   const Access = localStorage.getItem('access');
   const userData = JSON.parse(localStorage.getItem('user'));
 
+  function getCurrentDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+  
+    // Add leading zeros to month and day if needed
+    month = month < 10 ? `0${month}` : month;
+    day = day < 10 ? `0${day}` : day;
+  
+    return `${year}-${month}-${day}`;
+  }
+
 
 
 
@@ -184,7 +197,7 @@ function BookCar() {
 
     // Set the default image URL of the selected vehicle for the modal
     if (selectedVehicle) {
-      const absoluteImageUrl = `https://puredrive.onrender.com${selectedVehicle.default_image}`;
+      const absoluteImageUrl = selectedVehicle.default_image;
       setModalCarImg(absoluteImageUrl);
     }
   };
@@ -306,7 +319,7 @@ function BookCar() {
                 </div>
                 <div className="box-form__car-time">
                   <label htmlFor="picktime">
-                    <i className="fa-regular fa-calendar-days "></i> &nbsp;
+                    <i className="fa-regular fa-calendar-days"></i> &nbsp;
                     Pick-up <b>*</b>
                   </label>
                   <input
@@ -314,8 +327,10 @@ function BookCar() {
                     value={date}
                     onChange={handlePickTime}
                     type="date"
+                    min={getCurrentDate()}
                   ></input>
                 </div>
+
                 <div className="box-form__car-type">
                   <label>
                     <i className="fa-regular fa-clock"></i> &nbsp; Select Your Time Slot <b>*</b>
@@ -353,7 +368,7 @@ function BookCar() {
       </>
     )}
 
-
+{/* MODAL OPENING */}
       <div className={`booking-modal ${modal ? "active-modal" : ""}`}>
         {/* title */}
         <div className="booking-modal__title">
