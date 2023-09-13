@@ -3,7 +3,7 @@ import axios from "axios";
 // Create and configure an Axios instance
 const axiosInstance = axios.create({
   baseURL: "https://puredrive.onrender.com", // Replace with your API base URL
-  timeout: 10000, // Set the timeout for requests (in milliseconds)
+  // timeout: 10000, // Set the timeout for requests (in milliseconds)
 });
 
 // Add a request interceptor to set the Authorization header before each request

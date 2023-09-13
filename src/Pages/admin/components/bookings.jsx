@@ -1,4 +1,7 @@
-import { Card, Typography, Button } from "@material-tailwind/react";
+import { Card, Typography, Button , Dialog, // Import the Dialog component
+DialogHeader,
+DialogBody,
+DialogFooter, } from "@material-tailwind/react";
 import { UserPlusIcon } from "@heroicons/react/24/solid";
 
 import { SidebarWithSearch } from "./sidebar";
@@ -8,10 +11,25 @@ import axiosInstance from "../../../api/apiconfig";
 export function Bookings() {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedBookingForReview, setSelectedBookingForReview] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedReview, setSelectedReview] = useState('');
+
+
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  const openModal = (review) => {
+    setSelectedBookingForReview(review);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedBookingForReview(null); 
+    setIsModalOpen(false);
+  };
 
   async function fetchData() {
     try {
@@ -35,6 +53,8 @@ export function Bookings() {
   }
 
   console.log("bookings",bookings);
+  console.log(selectedBookingForReview,"review selected"); // Set the selected review
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -59,7 +79,7 @@ export function Bookings() {
             </thead>
             <thead>
               <tr>
-                {["Reference -Status ", "Brand & Model", "Date", "Time", "Dealer" ,"Customer Email"].map((head) => (
+                {["Reference -Status ", "Brand & Model", "Date & Time", "Dealer" ,"Customer Email","Feedback"].map((head) => (
                   <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                     <Typography variant="small" color="blue-gray" className="font-normal leading-none opacity-70" style={{ fontSize: '120.5%' }}>
                       {head}
@@ -96,14 +116,14 @@ export function Bookings() {
                     </td> */}
                     <td className={classes}>
                       <Typography variant="small" color="blue-gray" className="font-normal" style={{ fontSize: '137.5%' }}>
-                        {date}
+                        {date}-{time}
                       </Typography>
                     </td>
-                    <td className={classes}>
+                    {/* <td className={classes}>
                       <Typography variant="small" color="blue-gray" className="font-normal" style={{ fontSize: '137.5%' }}>
                         {time}
                       </Typography>
-                    </td>
+                    </td> */}
                     <td className={classes}>
                       <Typography variant="small" color="blue-gray" className="font-normal" style={{ fontSize: '137.5%' }}>
                         {dealer}
@@ -114,6 +134,23 @@ export function Bookings() {
                         {customer_email}
                       </Typography>
                     </td>
+                    {review ? <>
+                      <td className={classes}>
+                      <Typography as="a" href="#" variant="small" color="blue" className="font-semibold" style={{ fontSize: '137.5%' }}>
+                      <Button
+                        className="flex items-center gap-3 font-bold text-black "
+                        color="blue"
+                        size="lg"
+                        onClick={() => openModal(review)}
+                      >
+                        View Feedback
+                      </Button>
+                      </Typography>
+                    </td>
+                    </>:
+                    <>
+                    </>
+                    }
                   </tr>
                 );
               })}
@@ -122,6 +159,30 @@ export function Bookings() {
 
         </Card>
       </div>
+      {selectedBookingForReview && (
+        <Dialog
+        open={isModalOpen}
+        onClose={closeModal}
+        size="sm" // Change this to "xl" for extra-large size
+      >
+        <DialogHeader>Testride Feedback</DialogHeader>
+        <DialogBody divider className="mr-1 text-2xl">
+          {/* Display the review content here */}
+          {selectedBookingForReview}
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={closeModal}
+            className="mr-1 text-lg"
+          >
+            Close
+          </Button>
+        </DialogFooter>
+      </Dialog>
+      
+      )}
     </div>
   );
 }
