@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axiosInstance from '../../../api/apiconfig';
 import { toast } from 'react-toastify';
+import Loader from '../../loader';
 
 function ImageEditModal({ images, onClose, onImageEdit, fetchData, selectedVehicleId }) {
     const [editedImages, setEditedImages] = useState([...images]);
     const [selectedImages, setSelectedImages] = useState([]);
     const [Image, setImage] = useState(null);
+    const [loading,isLoading] =useState(false);
 
 
     const handleImageDelete = async (id) => {
@@ -43,13 +45,14 @@ function ImageEditModal({ images, onClose, onImageEdit, fetchData, selectedVehic
             for (let i = 0; i < Image.length; i++) {
                 formData.append('images', Image[i]);
             }
-    
+            isLoading(true);
             // Send the FormData object to the backend
             await axiosInstance.post(`/adminapp/images/?vehicle_id=${selectedVehicleId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+            isLoading(false);
 
             toast.success('Images saved successfully');
             // onImageEdit(editedImages);
@@ -103,6 +106,7 @@ function ImageEditModal({ images, onClose, onImageEdit, fetchData, selectedVehic
 
                 </div>
                 <div className="flex justify-between mt-4">
+                {loading ? <> <Loader/> </> : <> </>}
                 <button
                   type="submit"
                   onClick={handleSaveImages}
