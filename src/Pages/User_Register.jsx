@@ -78,28 +78,35 @@ const UserRegister = () => {
         
           <>
           <form onSubmit={handleSubmit}>
-          <div className="mb-8">
+          <div className="mb-3">
             <label htmlFor="name" className="block mb-2 text-xl font-medium text-gray-700">
               Your Name
             </label>
             <input type="text" id="username" className="text-xl w-screen px-6 py-4 border border-gray-300 rounded-lg focus:outline-none" onChange={handleChange} required /> {/* Use w-screen class */}
           </div>
 
-          <div className="mb-8">
+          <div className="mb-3">
             <label htmlFor="email" className="block mb-2 text-xl font-medium text-gray-700">
               Your Email
             </label>
             <input type="email" id="email" className="text-xl w-screen px-6 py-4 border border-gray-300 rounded-lg focus:outline-none" onChange={handleChange} required /> {/* Use w-screen class */}
           </div>
+          
+          <div className="mb-3">
+            <label htmlFor="phone" className="block mb-2 text-xl font-medium text-gray-700">
+              Phone
+            </label>
+            <input type="number" id="phone" className="text-xl w-screen px-6 py-4 border border-gray-300 rounded-lg focus:outline-none" onChange={handleChange} required /> {/* Use w-screen class */}
+          </div>
 
-          <div className="mb-8">
+          <div className="mb-3">
             <label htmlFor="password" className="block mb-2 text-xl font-medium text-gray-700">
               Password
             </label>
             <input type="password" id="password" className="text-xl w-screen px-6 py-4 border border-gray-300 rounded-lg focus:outline-none" onChange={handleChange} required /> {/* Use w-screen class */}
           </div>
 
-          <div className="mb-8">
+          <div className="mb-3">
             <label htmlFor="confirmPassword" className="block mb-2 text-xl font-medium text-gray-700">
               Repeat your password
             </label>

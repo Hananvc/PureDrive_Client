@@ -32,7 +32,7 @@ export function Profile() {
     setModal(true);
   };
 
-  const user_id = localStorage.getItem('id');
+  const user_id = JSON.parse(localStorage.getItem('user')).id;
   const [userData, setUserdata] = useState([]);
 
   useEffect(() => {

@@ -103,6 +103,7 @@ import React, { useState ,useEffect} from 'react';
 import axios from 'axios';
 import axiosInstance from '../api/apiconfig';
 import { ToastContainer, toast } from 'react-toastify';
+import "../styles/profileloader.css";
 
 function ProfileUpdateMdl({ isVisible, onClose, profilee, onProfileUpdate }) {
   const [modal, setModal] = useState(false);
@@ -114,8 +115,9 @@ function ProfileUpdateMdl({ isVisible, onClose, profilee, onProfileUpdate }) {
   const [phoneNumber, setPhoneNumber] = useState(profilee?.phone  || '');
   const [photo, setPhoto] = useState(profilee?.profile_image || null);
   const [newPhoto, setNewPhoto] = useState(null);
+  const [loading,isLoading] = useState(false)
   
-  const user = localStorage.getItem('id');
+  const user = JSON.parse(localStorage.getItem('user')).id;
   console.log(user,"--------------user-----------");
   useEffect(() => {
     const fetchUserData = async () => {
@@ -142,6 +144,7 @@ function ProfileUpdateMdl({ isVisible, onClose, profilee, onProfileUpdate }) {
     e.preventDefault();
 
     try {
+      isLoading(true);
       const formData = new FormData();
       formData.append('user_id', profilee);
       formData.append('username', fullname);
@@ -161,7 +164,7 @@ function ProfileUpdateMdl({ isVisible, onClose, profilee, onProfileUpdate }) {
           'Content-Type': 'multipart/form-data',
         },
       });
-
+      isLoading(false);
       console.log('Profile updated successfully:', response.data);
       onProfileUpdate();
       console.log(response.data);
@@ -237,12 +240,22 @@ function ProfileUpdateMdl({ isVisible, onClose, profilee, onProfileUpdate }) {
             }}
           />
           <div className="flex justify-center">
+            {loading ? <> 
+              <section class="dots-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </section>
+          </> : <>             
             <Button type="submit" className="px-6 py-3">
               Update
             </Button>
+            
             <Button type="submit" className="px-6 py-3 bg-gray-500 mx-4 " onClick={onClose}>
               Cancel
             </Button>
+            </>}
+
           </div>
         </form>
       </div>

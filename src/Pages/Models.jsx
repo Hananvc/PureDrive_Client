@@ -15,6 +15,8 @@ import {
   Tooltip,
   IconButton,
 } from "@material-tailwind/react";
+import Loader from "./loader";
+import { Loginloader } from "./loginloader";
 
 
 function Models() {
@@ -131,9 +133,6 @@ function Models() {
     }
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
   return (
     <>
       <Navbar />
@@ -146,9 +145,13 @@ function Models() {
           Vehicles
         </Typography>
         </div>
-
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 overflow-hidden">
+      {loading ? <> <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
+    <Loginloader/>
+    
+  </div> </> :
+      
+      <> 
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 overflow-hidden">
         {allData.map((data) => (
         <Card className="w-full max-w-[26rem] shadow-2xl card-container mx-16 my-20 ">
         <CardHeader floated={false} color="blue-gray">
@@ -296,6 +299,10 @@ function Models() {
 
 
         </div>
+      
+      </>}
+
+
 
 
 
