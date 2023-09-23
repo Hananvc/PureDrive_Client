@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axiosInstance from '../../../api/apiconfig';
 import { toast } from 'react-toastify';
 import Loader from '../../loader';
+import "./testing.css";
 
 function ImageEditModal({ images, onClose, onImageEdit, fetchData, selectedVehicleId }) {
     const [editedImages, setEditedImages] = useState([...images]);
@@ -106,22 +107,34 @@ function ImageEditModal({ images, onClose, onImageEdit, fetchData, selectedVehic
 
                 </div>
                 <div className="flex justify-between mt-4">
-                {loading ? <> <Loader/> </> : <> </>}
-                <button
-                  type="submit"
-                  onClick={handleSaveImages}
-                  className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-6 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Upload Images
-                </button>
-                <button
-                  type="button"
-                  onClick={onClose}
-                  className="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                >
-                  Cancel
-                </button>
-              </div>
+                {loading ? (
+                    <div className="flex items-center mx-44">
+                    <div className="three-body">
+                        <div className="three-body__dot"></div>
+                        <div className="three-body__dot"></div>
+                        <div className="three-body__dot"></div>
+                    </div>
+                    </div>
+                ) : (
+                    <>
+                    <button
+                        type="submit"
+                        onClick={handleSaveImages}
+                        className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-6 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                        Upload Images
+                    </button>
+                    <button
+                        type="button"
+                        onClick={onClose}
+                        className="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                    >
+                        Cancel
+                    </button>
+                    </>
+                )}
+                </div>
+
             </div>
         </div>
     );
