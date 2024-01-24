@@ -121,7 +121,7 @@ const UserRegister = () => {
         </form>
         </>
         <p className="text-xl text-center mt-6"> {/* Increase text-xl */}
-          Delear Registration? <Link type="button" to="/dealer_register" className="text-white font-bold" style={{ color: '#fff', textDecoration: 'none' }} onMouseOver={(e) => (e.target.style.color = '#ff7f71')} onMouseOut={(e) => (e.target.style.color = '#fff')}>Click Here.</Link>
+          Dealer Registration? <Link type="button" to="/dealer_register" className="text-white font-bold" style={{ color: '#fff', textDecoration: 'none' }} onMouseOver={(e) => (e.target.style.color = '#ff7f71')} onMouseOut={(e) => (e.target.style.color = '#fff')}>Click Here.</Link>
         </p>
         <p className="text-xl text-center mt-2"> {/* Increase text-xl */}
           Have an account? <a
